@@ -120,6 +120,15 @@ python train_pointnet2.py
 python test.py --model pointnet
 python test.py --model pointnet2
 
+## Conclusion
+本プロジェクトでは，PointNet と PointNet++ を点群分割タスクにおいて比較実装し，
+階層的な局所特徴学習が分割性能向上に有効であることを確認した。
+
+本実装を通じて，点群深層学習におけるモデル設計および特徴表現の重要性について理解を深めた。
+
+Reference
+Qi, C. R., et al., PointNet: Deep Learning on Point Sets for 3D Classification and Segmentation
+Qi, C. R., et al., PointNet++: Deep Hierarchical Feature Learning on Point Sets in a Metric Space
 
 
 
