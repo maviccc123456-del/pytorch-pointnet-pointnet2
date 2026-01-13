@@ -6,26 +6,26 @@
 [![Python 3.10](https://img.shields.io/badge/python-3.10-blue.svg)](https://www.python.org/downloads/release/python-31011/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.5.1-ee4c2c.svg)](https://pytorch.org/)
 
-## 📋 目次
+## 目次
 
-- [🎯 概要](#-概要)
-- [🔍 背景・動機](#-背景動機)
-- [🔬 手法](#-手法)
-- [💻 実装環境](#-実装環境)
-- [🚀 インストール](#-インストール)
-- [📦 データセット準備](#-データセット準備)
-- [📁 プロジェクト構造](#-プロジェクト構造)
-- [🎮 使用方法](#-使用方法)
-- [📊 実験結果](#-実験結果)
-- [🎨 可視化](#-可視化)
-- [🔮 今後の課題](#-今後の課題)
-- [📚 参考文献](#-参考文献)
-- [📄 ライセンス](#-ライセンス)
-- [🙏 謝辞](#-謝辞)
+- [概要](#概要)
+- [背景・動機](#背景動機)
+- [手法](#手法)
+- [実装環境](#実装環境)
+- [インストール](#インストール)
+- [データセット準備](#データセット準備)
+- [プロジェクト構造](#プロジェクト構造)
+- [使用方法](#使用方法)
+- [実験結果](#実験結果)
+- [可視化](#可視化)
+- [今後の課題](#今後の課題)
+- [参考文献](#参考文献)
+- [ライセンス](#ライセンス)
+- [謝辞](#謝辞)
 
 ---
 
-## 🎯 概要
+## 概要
 
 本リポジトリでは，点群深層学習の代表的手法である **PointNet** および **PointNet++** を対象とし，点群分割タスクにおける両モデルの実装および性能比較を行います。
 
@@ -43,24 +43,24 @@ PointNet++ は，上記の課題を解決するため，サンプリングおよ
 
 ---
 
-## 🔍 背景・動機
+## 背景・動機
 
 ### PointNet の特徴と課題
-- ✅ Point-wise MLP により各点を独立に処理するシンプルな構造
-- ✅ 点の順序に依存しない permutation invariance を実現
-- ❌ グローバルプーリングに強く依存するため，局所構造情報の表現が限定的
+- Point-wise MLP により各点を独立に処理するシンプルな構造
+- 点の順序に依存しない permutation invariance を実現
+- グローバルプーリングに強く依存するため，局所構造情報の表現が限定的
 
 ### PointNet++ の改善点
-- ✅ Farthest Point Sampling (FPS) による効率的な代表点選択
-- ✅ Ball Query / kNN による局所領域の構成
-- ✅ Set Abstraction による階層的特徴学習
+- Farthest Point Sampling (FPS) による効率的な代表点選択
+- Ball Query / kNN による局所領域の構成
+- Set Abstraction による階層的特徴学習
 
 ### 本プロジェクトの目的
 **局所構造のモデリング能力の違いが点群分割性能に与える影響を明らかにする**
 
 ---
 
-## 🔬 手法
+## 手法
 
 ### PointNet
 
@@ -73,9 +73,9 @@ Input Points → Point-wise MLP → Max Pooling → Global Feature
 ```
 
 **特徴**
-- ✅ 点の順序に依存しない
-- ✅ 実装がシンプルで高速
-- ❌ 局所構造の表現能力が限定的
+- 点の順序に依存しない
+- 実装がシンプルで高速
+- 局所構造の表現能力が限定的
 
 **アーキテクチャ詳細**
 - Input: (B, N, 3) - Batch size, Number of points, XYZ coordinates
@@ -97,9 +97,9 @@ Input Points → FPS Sampling → Ball Query / kNN → PointNet (SA)
 ```
 
 **特徴**
-- ✅ 局所的な幾何構造を考慮可能
-- ✅ 階層的特徴学習により高い表現力
-- ⚠️ 計算コストが PointNet より高い
+- 局所的な幾何構造を考慮可能
+- 階層的特徴学習により高い表現力
+- 計算コストが PointNet より高い
 
 **アーキテクチャ詳細**
 - Set Abstraction Layers: 3 layers
@@ -109,7 +109,7 @@ Input Points → FPS Sampling → Ball Query / kNN → PointNet (SA)
 
 ---
 
-## 💻 実装環境
+## 実装環境
 
 ### System
 - **OS**: Windows 10
@@ -131,7 +131,7 @@ Input Points → FPS Sampling → Ball Query / kNN → PointNet (SA)
 
 ---
 
-## 🚀 インストール
+## インストール
 
 ### 1. リポジトリのクローン
 
@@ -176,7 +176,7 @@ open3d==0.17.0  # 可視化用（オプション）
 
 ---
 
-## 📦 データセット準備
+## データセット準備
 
 ### ShapeNet Part Segmentation Dataset
 
@@ -211,7 +211,7 @@ data/
 
 ---
 
-## 📁 プロジェクト構造
+## プロジェクト構造
 
 ```
 pointnet-comparison/
@@ -248,7 +248,7 @@ pointnet-comparison/
 
 ---
 
-## 🎮 使用方法
+## 使用方法
 
 ### 学習
 
@@ -325,7 +325,7 @@ tensorboard --logdir logs/
 
 ---
 
-## 📊 実験結果
+## 実験結果
 
 ### 実験設定
 
@@ -372,7 +372,7 @@ tensorboard --logdir logs/
 
 ---
 
-## 🎨 可視化
+## 可視化
 
 ### 分割結果の比較
 
@@ -393,17 +393,17 @@ tensorboard --logdir logs/
 
 ---
 
-## 💡 考察
+## 考察
 
 ### PointNet++ の優位性
-- ✅ 局所構造を考慮できるため，全体的に高い分割精度を示した
-- ✅ 特に境界付近や細部構造において性能差が顕著に現れた
-- ✅ 小さなパーツ（例: 飛行機のエンジン）の分割精度が向上
+- 局所構造を考慮できるため，全体的に高い分割精度を示した
+- 特に境界付近や細部構造において性能差が顕著に現れた
+- 小さなパーツ（例: 飛行機のエンジン）の分割精度が向上
 
 ### PointNet の特性
-- ✅ シンプルな構造により学習が安定
-- ✅ 推論速度が PointNet++ より約 XX% 高速
-- ❌ 複雑な形状や細部の分割において課題
+- シンプルな構造により学習が安定
+- 推論速度が PointNet++ より約 XX% 高速
+- 複雑な形状や細部の分割において課題
 
 ### 計算コストとのトレードオフ
 - PointNet++: 高精度だが計算コストが高い（約 X 倍）
@@ -412,18 +412,18 @@ tensorboard --logdir logs/
 
 ---
 
-## 🔮 今後の課題
+## 今後の課題
 
-- [ ] **マルチスケール特徴統合**: PointNet++ のマルチスケール版（MSG）の実装
-- [ ] **データ拡張の改善**: より効果的な augmentation 手法の検証
-- [ ] **他のデータセット**: S3DIS, ScanNet などでの評価
-- [ ] **軽量化**: モバイル環境向けの軽量版モデルの開発
-- [ ] **リアルタイム処理**: 推論速度の最適化
-- [ ] **Transformer との比較**: Point Transformer などとの性能比較
+- マルチスケール特徴統合: PointNet++ のマルチスケール版（MSG）の実装
+- データ拡張の改善: より効果的な augmentation 手法の検証
+- 他のデータセット: S3DIS, ScanNet などでの評価
+- 軽量化: モバイル環境向けの軽量版モデルの開発
+- リアルタイム処理: 推論速度の最適化
+- Transformer との比較: Point Transformer などとの性能比較
 
 ---
 
-## 📚 参考文献
+## 参考文献
 
 1. **PointNet: Deep Learning on Point Sets for 3D Classification and Segmentation**  
    Charles R. Qi, Hao Su, Kaichun Mo, Leonidas J. Guibas  
@@ -442,7 +442,7 @@ tensorboard --logdir logs/
 
 ---
 
-## 📄 ライセンス
+## ライセンス
 
 本プロジェクトは MIT ライセンスの下で公開されています。詳細は [LICENSE](LICENSE) ファイルを参照してください。
 
@@ -458,7 +458,7 @@ in the Software without restriction...
 
 ---
 
-## 🙏 謝辞
+## 謝辞
 
 - **PointNet / PointNet++ の原著者**: Charles R. Qi 氏をはじめとする研究チームに感謝
 - **ShapeNet Dataset**: Stanford University および Princeton University のデータセット提供に感謝
@@ -467,7 +467,7 @@ in the Software without restriction...
 
 ---
 
-## 📧 連絡先
+## 連絡先
 
 質問や提案がありましたら，お気軽にお問い合わせください。
 
@@ -477,7 +477,7 @@ in the Software without restriction...
 
 ---
 
-## 📈 更新履歴
+## 更新履歴
 
 - **2025-01-XX**: プロジェクト開始，基本実装完了
 - **2025-01-XX**: PointNet 学習完了
@@ -486,4 +486,4 @@ in the Software without restriction...
 
 ---
 
-**⭐ このプロジェクトが役に立ったら，Star をいただけると嬉しいです！**
+**このプロジェクトが役に立ったら，Star をいただけると嬉しいです！**
