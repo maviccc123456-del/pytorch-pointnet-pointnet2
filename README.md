@@ -1,6 +1,6 @@
 # PointNet / PointNet++ による点群分割の比較実装
 
-## Overview
+## 1.概要
 本リポジトリでは，点群深層学習の代表的手法である **PointNet** および **PointNet++** を対象とし，
 点群分割タスクにおける両モデルの実装および性能比較を行う。
 
@@ -16,7 +16,7 @@ PointNet の課題を改善したモデルである。
 
 ---
 
-## Motivation（Why）
+## 2.背景・動機
 
 - PointNet は point-wise MLP により，各点を独立に処理するシンプルな構造を持つ
 - グローバルプーリングに強く依存するため，局所構造情報の表現が限定的である
@@ -28,7 +28,7 @@ PointNet の課題を改善したモデルである。
 
 ---
 
-## Method
+## 3.手法
 
 ### PointNet
 - 各点に対して point-wise MLP を適用
@@ -54,7 +54,7 @@ PointNet の課題を改善したモデルである。
 
 ---
 
-## Experiment
+## 4.実験設定
 
 - Task: 点群分割（Semantic / Part Segmentation）
 - Dataset:
@@ -68,7 +68,7 @@ PointNet の課題を改善したモデルである。
 
 ---
 
-## Results
+## 5.実験結果
 
 | Model       | Accuracy | mIoU |
 |------------|----------|------|
@@ -83,7 +83,7 @@ PointNet の課題を改善したモデルである。
 
 ---
 
-## Environment
+## 実装環境
 
 - Python: 3.x
 - PyTorch: x.x.x
@@ -92,7 +92,7 @@ PointNet の課題を改善したモデルである。
 
 ---
 
-## Usage
+## 実行方法
 
 ```bash
 # Training
@@ -102,3 +102,7 @@ python train_pointnet2.py
 # Evaluation / Visualization
 python test.py --model pointnet
 python test.py --model pointnet2
+
+
+
+
