@@ -66,13 +66,11 @@ PointNet++ は，上記の課題を解決するため，
 
 - Task: 点群分割（Semantic / Part Segmentation）
 - Dataset:
-  - ModelNet / ShapeNet Part / Custom Dataset
-- Number of points: XXXX
+  -  `shapenetcore_partanno_segmentation_benchmark_v0_normal`
+- Number of points: 2048
 - Evaluation metrics:
   - Overall Accuracy
   - Mean IoU
-
-※ 学習条件（epoch 数，batch size，optimizer 等）は両モデルで統一
 
 ---
 
@@ -93,10 +91,21 @@ PointNet++ は，上記の課題を解決するため，
 
 ## 実装環境
 
-- Python: 3.x
-- PyTorch: x.x.x
-- CUDA: x.x
-- OS: Windows / Linux
+### System
+- OS: Windows 10
+- Python: 3.10.11
+
+### Hardware
+- GPU: NVIDIA GeForce RTX 4070 SUPER
+- GPU Memory: 12 GB
+
+### Deep Learning Framework
+- PyTorch: 2.5.1（CUDA 12.1 対応）
+- CUDA (PyTorch): 12.1
+- CUDA (Driver): 12.7
+
+### NVIDIA Driver
+- Driver Version: 566.03
 
 ---
 
