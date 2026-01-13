@@ -10,7 +10,7 @@ point-wise MLP とグローバルプーリングにより点群全体の特徴�
 一方で，局所的な幾何構造の表現には課題がある。
 
 ※ PointNet における処理全体の流れ，設計思想および実装方法の詳細については，
-[アルゴリズム詳細解説（PointNet）](https://maviccc123456-del.github.io/) を参照されたい（筆者執筆）。
+[アルゴリズム詳細解説（PointNet）]([https://maviccc123456-del.github.io/](https://maviccc123456-del.github.io/pointnet/pointnet_explain/)) を参照されたい（筆者執筆）。
 
 PointNet++ は，上記の課題を解決するため，
 サンプリングおよびグルーピングによる階層的な局所特徴学習を導入したモデルである。
