@@ -1,11 +1,5 @@
 # PointNet / PointNet++ による点群分割の比較実装
 
-[English](README_EN.md) | 日本語
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.10](https://img.shields.io/badge/python-3.10-blue.svg)](https://www.python.org/downloads/release/python-31011/)
-[![PyTorch](https://img.shields.io/badge/PyTorch-2.5.1-ee4c2c.svg)](https://pytorch.org/)
-
 ## 📋 目次
 
 - [概要](#概要)
